@@ -27,13 +27,13 @@ O programa entra em um loop que permite ao usuário escolher entre diferentes op
 
 Como Usar:
 
-Clone o repositório:
+1. Clone o repositório:
 git clone https://github.com/kyliews/Usuarios_SQL3
 
-Navegue até o diretório do projeto:
+2. Navegue até o diretório do projeto:
 cd Usuarios_SQL3
 
-Execute o script Python:
+3. Execute o script Python:
 python psql.py
 
 Interaja com o banco de dados agora.
