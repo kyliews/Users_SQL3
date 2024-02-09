@@ -24,3 +24,16 @@ O código utiliza a biblioteca sqlite3 para interagir com o banco de dados SQLit
 
 Loop Principal
 O programa entra em um loop que permite ao usuário escolher entre diferentes operações, como cadastrar, listar, atualizar, excluir usuários ou sair do programa.
+
+Como Usar:
+
+Clone o repositório:
+git clone https://github.com/kyliews/Usuarios_SQL3
+
+Navegue até o diretório do projeto:
+cd Usuarios_SQL3
+
+Execute o script Python:
+python psql.py
+
+Interaja com o banco de dados agora.
