@@ -1,85 +1,78 @@
 import sqlite3
- 
-def criar_tabela():
-    conexao = sqlite3.connect("cadastro.db")
-    cursor = conexao.cursor()
-    cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios ( 
+
+def create_table():
+    connection = sqlite3.connect("registration.db")
+    cursor = connection.cursor()
+    cursor.execute('''CREATE TABLE IF NOT EXISTS users (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    nome TEXT NOT NULL,
-                    idade INTEGER NOT NULL)
+                    name TEXT NOT NULL,
+                    age INTEGER NOT NULL)
                     ''')
-    conexao.commit()
-    conexao.close()
-    
-def cadastrar_usuario(nome, idade):
-    conexao = sqlite3.connect("cadastro.db")
-    cursor = conexao.cursor()
-    cursor.execute('INSERT INTO usuarios (nome, idade) VALUES (?, ?)', (nome, idade))
-    conexao.commit()
-    conexao.close()
-    
-def listar_usuarios():
-    conexao = sqlite3.connect("cadastro.db")
-    cursor = conexao.cursor()
-    cursor.execute('SELECT * FROM usuarios')
-    usuarios = cursor.fetchall()
-    for usuario in usuarios:
-        print(f"ID: {usuario[0]}, Nome: {usuario[1]}, Idade: {usuario[2]}")
-    conexao.close()
-    
-def atualizar_usuario(usuario_id, novo_nome, nova_idade):
-    conexao = sqlite3.connect("cadastro.db")
-    cursor = conexao.cursor()
-    cursor.execute('UPDATE usuarios SET nome=?, idade=? WHERE id=?', (novo_nome, nova_idade, usuario_id))
-    conexao.commit()
-    conexao.close()
-    
-def excluir_usuario(usuario_id):
-    conexao = sqlite3.connect("cadastro.db")
-    cursor = conexao.cursor()
-    cursor.execute('DELETE FROM usuarios WHERE id=?', (usuario_id,))
-    conexao.commit()
-    conexao.close()
-    
-    
-criar_tabela() 
+    connection.commit()
+    connection.close()
+
+def register_user(name, age):
+    connection = sqlite3.connect("registration.db")
+    cursor = connection.cursor()
+    cursor.execute('INSERT INTO users (name, age) VALUES (?, ?)', (name, age))
+    connection.commit()
+    connection.close()
+
+def list_users():
+    connection = sqlite3.connect("registration.db")
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM users')
+    users = cursor.fetchall()
+    for user in users:
+        print(f"ID: {user[0]}, Name: {user[1]}, Age: {user[2]}")
+    connection.close()
+
+def update_user(user_id, new_name, new_age):
+    connection = sqlite3.connect("registration.db")
+    cursor = connection.cursor()
+    cursor.execute('UPDATE users SET name=?, age=? WHERE id=?', (new_name, new_age, user_id))
+    connection.commit()
+    connection.close()
+
+def delete_user(user_id):
+    connection = sqlite3.connect("registration.db")
+    cursor = connection.cursor()
+    cursor.execute('DELETE FROM users WHERE id=?', (user_id,))
+    connection.commit()
+    connection.close()
+
+create_table()
 
 while True:
-    print("\nEscolha uma operação: ")
-    print("1 - Cadastrar usuário")
-    print("2 - Listar usuários")
-    print("3 - Atualizar usuário")
-    print("4 - Excluir usuário")
-    print("0 - Sair")
-    
-    escolha = input("Digite o número da operação desejada: ")
-        
-    if escolha == "1":
-        nome = input("Digite o nome do usuário: ")
-        idade = int(input("Digite a idade do usuário: "))
-        cadastrar_usuario(nome, idade)
-        
-    elif escolha =="2":
-        listar_usuarios()
-        
-    elif escolha =="3":
-        usuario_id = int(input("Digite o ID do usuário que deseja atualizar: "))
-        novo_nome = input("Digite o novo nome: ")
-        nova_idade = int(input("Digite a nova idade: "))
-        atualizar_usuario(usuario_id, novo_nome, nova_idade)
-        
-    elif escolha =="4":
-        usuario_id = input("Digite o ID do usuário que deseja excluir: ")
-        excluir_usuario(usuario_id)
-        
-    elif escolha == "0":
-        print("Saindo do programa. Até mais!")
+    print("\nChoose an operation:")
+    print("1 - Register user")
+    print("2 - List users")
+    print("3 - Update user")
+    print("4 - Delete user")
+    print("0 - Exit")
+
+    choice = input("Enter the number of the desired operation: ")
+
+    if choice == "1":
+        name = input("Enter the user's name: ")
+        age = int(input("Enter the user's age: "))
+        register_user(name, age)
+
+    elif choice == "2":
+        list_users()
+
+    elif choice == "3":
+        user_id = int(input("Enter the ID of the user you want to update: "))
+        new_name = input("Enter the new name: ")
+        new_age = int(input("Enter the new age: "))
+        update_user(user_id, new_name, new_age)
+
+    elif choice == "4":
+        user_id = input("Enter the ID of the user you want to delete: ")
+        delete_user(user_id)
+
+    elif choice == "0":
+        print("Exiting the program. Goodbye!")
         break
     else:
-        print("Opção inválida. Tente novamente.")
-    
-
-    
-
-                    
-                  
+        print("Invalid option. Please try again.")
