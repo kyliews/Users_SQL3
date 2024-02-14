@@ -1,42 +1,21 @@
-Sistema de Cadastro de Usuários - SQLite
-Este é um programa em Python que utiliza um banco de dados SQLite para realizar operações de cadastro, leitura, atualização e exclusão de usuários.
 
-Funções Principais:
+User Registration System - SQLite This is a Python program that uses an SQLite database to perform user registration, reading, updating, and deletion operations.
 
-• criar_tabela()
-Cria a tabela usuarios no banco de dados se ela não existir.
+Project Structure:
 
-• cadastrar_usuario(nome, idade)
-Adiciona um novo usuário ao banco de dados.
+The code uses the sqlite3 library to interact with the SQLite database and perform CRUD operations (Create, Read, Update, Delete).
 
-• listar_usuarios()
-Exibe todos os usuários cadastrados no banco de dados.
+Main Loop: The program enters a loop that allows the user to choose between different operations, such as registering, listing, updating, deleting users, or exiting the program.
 
-• atualizar_usuario(usuario_id, novo_nome, nova_idade)
-Atualiza as informações de um usuário no banco de dados.
+How to Use:
 
-• excluir_usuario(usuario_id)
-Remove um usuário do banco de dados.
+Clone the repository:
+https://github.com/kyliews/Users_SQL3
 
-Estrutura do Projeto:
+Navigate to the project directory:
+cd Users_SQL3
 
-O código utiliza a biblioteca sqlite3 para interagir com o banco de dados SQLite e realizar as operações de CRUD (Create, Read, Update, Delete).
-
-Loop Principal
-O programa entra em um loop que permite ao usuário escolher entre diferentes operações, como cadastrar, listar, atualizar, excluir usuários ou sair do programa.
-
-Como Usar:
-
-1. Clone o repositório:
-   
-https://github.com/kyliews/Usuarios_SQL3
-
-2. Navegue até o diretório do projeto:
-   
-cd Usuarios_SQL3
-
-3. Execute o script Python:
-   
+Run the Python script:
 python psql.py
 
-Interaja com o banco de dados agora.
+Now, interact with the database.
