@@ -9,13 +9,13 @@ Main Loop: The program enters a loop that allows the user to choose between diff
 
 How to Use:
 
-Clone the repository:
+1. Clone the repository:
 https://github.com/kyliews/Users_SQL3
 
-Navigate to the project directory:
+2. Navigate to the project directory:
 cd Users_SQL3
 
-Run the Python script:
+3. Run the Python script:
 python psql.py
 
 Now, interact with the database.
